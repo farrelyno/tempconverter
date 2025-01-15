@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<ctype.h>
+int main (){
+    float temp;
+    char unit;
+    
+    printf("Masukkan unit suhu : ");
+    scanf ("%c",&unit);
+    
+        unit = toupper(unit);
+    if (unit=='C'){
+        printf("The unit is Celcius, now converting to Farenheit");
+        printf ("input the celcius: ");
+        scanf ("%f",&temp);
+        temp = (9/5*temp)+32;
+        printf("\nFarenheit : %f",temp);
+        }else if (unit=='F'){
+        printf("The unit is Farenheit, now converting to Celcius");
+        printf ("\ninput the celcius: ");
+        scanf ("%f",&temp);
+        temp = (temp+32)*5/9;
+        printf("\nCelcius : %f",temp);
+        }else{
+            printf("Error occured");
+        }
+    }
