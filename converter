@@ -4,22 +4,36 @@ int main (){
     float temp;
     char unit;
     
-    printf("Masukkan unit suhu : ");
+    printf("Input the unit of temperature : ");
     scanf ("%c",&unit);
-    
-        unit = toupper(unit);
+    unit = toupper(unit);
+
     if (unit=='C'){
-        printf("The unit is Celcius, now converting to Farenheit");
-        printf ("input the celcius: ");
-        scanf ("%f",&temp);
-        temp = (9/5*temp)+32;
-        printf("\nFarenheit : %f",temp);
-        }else if (unit=='F'){
+        //Celcius input
+        printf("The unit is Celcius, now converting to Fahrenheit");
+        printf ("\nInput the temperature: ");
+        //Fahrenheit output
+        if(scanf("%f",&temp)==1){
+            temp = (9/5*temp)+32;
+            printf("\nFahrenheit : %f",temp);
+        }else{
+            printf("Wrong input");
+        }
+
+
+    }else if (unit=='F'){
+        //Fahrenheit input
         printf("The unit is Farenheit, now converting to Celcius");
-        printf ("\ninput the celcius: ");
-        scanf ("%f",&temp);
-        temp = (temp+32)*5/9;
-        printf("\nCelcius : %f",temp);
+        printf ("\ninput the temperature: ");
+        //Celcius output
+        if(scanf("%f",&temp)==1){
+            temp = (temp+32)*5/9;
+            printf("\nCelcius : %f",temp);
+        }else{
+            printf("Wrong input");
+        }
+
+        //The input is not c or f
         }else{
             printf("Error occured");
         }
